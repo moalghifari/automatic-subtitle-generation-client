@@ -521,7 +521,7 @@ a.badge-secondary:hover {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid #eeeeee;
+  border: 2px solid #eeeeee;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -1014,8 +1014,9 @@ a.badge-secondary:hover {
   height: 250px;
   text-align: justify;
   overflow-y: auto;
-  padding-right: 10px;
+  padding: 10px;
   margin-top: 10px;
+  border: 2px solid #eeeeee;
 }
 
 .text-left {
