@@ -233,7 +233,7 @@ a:hover {
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0) !important;
 }
-.btn {
+/* .btn {
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -252,7 +252,7 @@ a:hover {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
+} */
 .btn-outline-purple {
   background-color: #ffffff;
   color: #929292;
@@ -340,6 +340,11 @@ a:hover {
 .pill {
   border-radius: 10px;
   padding: 10px 15px;
+  width: 100%;
+}
+.pill-sm {
+  border-radius: 10px;
+  padding: 5px 10px;
   width: 100%;
 }
 .badge-green {
@@ -1010,6 +1015,7 @@ a.badge-secondary:hover {
   text-align: justify;
   overflow-y: auto;
   padding-right: 10px;
+  margin-top: 10px;
 }
 
 .text-left {
