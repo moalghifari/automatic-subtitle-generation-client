@@ -977,7 +977,7 @@ a.badge-secondary:hover {
 } 
 
 .video-card {
-  margin-top: 150px;
+  margin-top: 70px;
   padding-left: 300px;
   padding-right: 300px;
 }
@@ -992,4 +992,26 @@ a.badge-secondary:hover {
 
 .App {
   text-align: center;
+}
+
+.transcription-card {
+  margin-top: 15px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.transcription-block {
+  padding: 15px;
+  height: fit-content;
+}
+
+.transcription {
+  height: 250px;
+  text-align: justify;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.text-left {
+  text-align: left;
 }
