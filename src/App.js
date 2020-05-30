@@ -10,6 +10,7 @@ import {
   CustomInput
 } from 'reactstrap';
 import postNewsVideo from './news_video';
+import Swal from 'sweetalert2';
 
 const App = () => {
   const [newsVideo, setNewsVideo] = useState(undefined);
@@ -54,15 +55,28 @@ const App = () => {
               throw new Error('Missing error code');
           }
         }
-
         setNewsVideoFilename(newsVideoResponse.data.filename);
+        await Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: 'News video has been uploaded.',
+        });
       }
     } catch (e) {
       setLoading(false);
       setError(e.message);
     }
-
   };
+
+  useEffect(() => {
+    if (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'An error has occured',
+        text: error,
+      }).then(() => setError(''));
+    }
+  }, [error]);
 
   return (
     <div className="App">
