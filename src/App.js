@@ -68,6 +68,15 @@ const App = () => {
     }
   };
 
+  const downloadSrt = () => {
+    const element = document.createElement("a");
+    const file = new Blob([transcription], {type: 'text/plain'});
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.srt";
+    document.body.appendChild(element);
+    element.click();
+  }
+
   useEffect(() => {
     if (error) {
       Swal.fire({
@@ -112,6 +121,7 @@ const App = () => {
               <Button
                 className="btn-purple pill btn btn-secondary font-weight-bold"
                 onClick={uploadNewsVideo}
+                disabled={!newsVideo}
                 >
                 Unggah
               </Button>
@@ -132,7 +142,8 @@ const App = () => {
                 <Button
                   size="sm"
                   className="btn-purple pill-sm font-weight-bold"
-                  // onClick={transcribeNewsVideo}
+                  onClick={downloadSrt}
+                  disabled={!transcription}
                   >
                   Unduh .srt
                 </Button>
