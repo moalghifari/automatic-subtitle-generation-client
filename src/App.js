@@ -9,7 +9,7 @@ import {
   Row,
   CustomInput
 } from 'reactstrap';
-import postNewsVideo from './news_video';
+import { postNewsVideo, getTranscription } from './news_video';
 import Swal from 'sweetalert2';
 
 const App = () => {
@@ -77,6 +77,17 @@ const App = () => {
       }).then(() => setError(''));
     }
   }, [error]);
+
+  // useEffect(() => {
+  //   async function fetchTranscription() {
+  //     let transcriptionResponse = await getTranscription('xxx.srt')
+  //     console.log(transcriptionResponse.status)
+  //     if (transcriptionResponse.status === 200) {
+  //       setTranscription(transcriptionResponse.data.transcription)
+  //     }
+  //   }
+  //   fetchTranscription()
+  // }, [transcription]);
 
   return (
     <div className="App">

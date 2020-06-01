@@ -8,7 +8,7 @@ const validateStatus = () => true;
  * Upload news video
  * @param {video} news_video
  */
-const postNewsVideo = news_video =>
+export const postNewsVideo = news_video =>
   new Promise(async (resolve, reject) => {
     try {
       const data = new FormData();
@@ -26,4 +26,21 @@ const postNewsVideo = news_video =>
     }
   });
 
-export default postNewsVideo;
+/**
+ * Get transcription
+ * @param {filename} filename
+ */
+export const getTranscription = filename =>
+  new Promise(async (resolve, reject) => {
+    try {
+      const url = `${defaultAPIURL}/transcriptions/${filename}`;
+      const { data: response } = await axios({
+        url,
+        method: 'GET',
+        validateStatus
+      });
+      resolve(response);
+    } catch (e) {
+      reject(e);
+    }
+  });
