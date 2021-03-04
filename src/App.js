@@ -33,7 +33,7 @@ const App = () => {
       setNewsVideo(newsVideo);
     } catch (e) {
       setLoading(false);
-      setError('Could not upload file');
+      setError('Tidak dapat mengunggah file');
     }
   };
 
@@ -48,18 +48,19 @@ const App = () => {
           const { code } = newsVideoResponse.error;
           switch (code) {
             case 500:
-              throw new Error('Could not contact the server');
+              throw new Error('Tidak dapat mengkontak server');
             case 400:
-              throw new Error('Bad Request');
+              throw new Error('Permintaan salah');
             default:
-              throw new Error('Missing error code');
+              throw new Error('Kode error tidak diketahui');
           }
         }
         setNewsVideoFilename(newsVideoResponse.data.filename);
+        setTranscription(newsVideoResponse.data.transcription)
         await Swal.fire({
           icon: 'success',
-          title: 'Success',
-          text: 'News video has been uploaded.',
+          title: 'Sukses',
+          text: 'Data berhasil ditranskripsikan',
         });
       }
     } catch (e) {
@@ -72,7 +73,7 @@ const App = () => {
     const element = document.createElement("a");
     const file = new Blob([transcription], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
-    element.download = "myFile.srt";
+    element.download = newsVideoFilename + ".srt";
     document.body.appendChild(element);
     element.click();
   }
@@ -81,7 +82,7 @@ const App = () => {
     if (error) {
       Swal.fire({
         icon: 'error',
-        title: 'An error has occured',
+        title: 'Kesalahan terjadi',
         text: error,
       }).then(() => setError(''));
     }
@@ -123,7 +124,7 @@ const App = () => {
                 onClick={uploadNewsVideo}
                 disabled={!newsVideo}
                 >
-                Unggah
+                Transkripsikan
               </Button>
             </Form>
           </Col>
