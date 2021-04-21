@@ -1,4 +1,5 @@
 import React from 'react';
+import ScaleLoader from '@bit/davidhu2000.react-spinners.scale-loader';
 import { useState, useEffect} from 'react';
 import {
   Card,
@@ -57,6 +58,7 @@ const App = () => {
         }
         setNewsVideoFilename(newsVideoResponse.data.filename);
         setTranscription(newsVideoResponse.data.transcription)
+        setLoading(false);
         await Swal.fire({
           icon: 'success',
           title: 'Sukses',
@@ -77,6 +79,12 @@ const App = () => {
     document.body.appendChild(element);
     element.click();
   }
+
+  const loadingComponent = loading ? (
+    <div className="loading-overlay">
+      <ScaleLoader color='#543592' />
+    </div>
+  ) : null;
 
   useEffect(() => {
     if (error) {
@@ -101,6 +109,9 @@ const App = () => {
 
   return (
     <div className="App">
+      <div>
+        {loadingComponent}
+      </div>
       <div className="video-card">
         <Card body>
           <Col className="video-form">
@@ -112,7 +123,7 @@ const App = () => {
                     accept="*"
                     id="newsVideo"
                     name="customFile"
-                    label="Masukan video siaran berita"
+                    label="Upload video"
                     onChange={e => {
                       onFileChange(e.target.files[0])
                     }}
@@ -134,12 +145,12 @@ const App = () => {
         <Card body>
           <div className="transcription-block">
             <Row>
-              <Col sm={10} >
+              <Col xs={6} sm={6} md={9} >
                 <h5 className="text-left text-bold">
                   Transkripsi:
                 </h5>
               </Col>
-              <Col className="text-right" sm={2}>
+              <Col className="text-right" xs={6} sm={6} md={3}>
                 <Button
                   size="sm"
                   className="btn-purple pill-sm font-weight-bold"

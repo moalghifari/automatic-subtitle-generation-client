@@ -937,7 +937,6 @@ a.badge-secondary:hover {
   position: fixed;
   z-index: 999;
   height: 2em;
-  width: 2em;
   overflow: visible;
   margin: auto;
   top: 0;
@@ -981,10 +980,19 @@ a.badge-secondary:hover {
   color: #16181b;
 } 
 
+
 .video-card {
-  margin-top: 70px;
-  padding-left: 300px;
-  padding-right: 300px;
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media screen and (min-width: 1000px) {
+  .video-card {
+    margin-top: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
 }
 
 .video-form {
@@ -1001,9 +1009,18 @@ a.badge-secondary:hover {
 
 .transcription-card {
   margin-top: 15px;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+
+@media screen and (min-width: 1000px) {
+  .transcription-card {
+    margin-top: 15px;
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+
 
 .transcription-block {
   padding: 15px;
