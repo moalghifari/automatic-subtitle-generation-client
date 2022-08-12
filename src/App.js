@@ -62,7 +62,7 @@ const App = () => {
         await Swal.fire({
           icon: 'success',
           title: 'Sukses',
-          text: 'Data berhasil ditranskripsikan',
+          text: 'Subtitles berhasil dibuat',
         });
       }
     } catch (e) {
@@ -135,7 +135,7 @@ const App = () => {
                 onClick={uploadNewsVideo}
                 disabled={!newsVideo}
                 >
-                Transkripsikan
+                Buat Subtitles
               </Button>
             </Form>
           </Col>
@@ -147,7 +147,7 @@ const App = () => {
             <Row>
               <Col xs={6} sm={6} md={9} >
                 <h5 className="text-left text-bold">
-                  Transkripsi:
+                  Subtitles:
                 </h5>
               </Col>
               <Col className="text-right" xs={6} sm={6} md={3}>
@@ -157,7 +157,7 @@ const App = () => {
                   onClick={downloadSrt}
                   disabled={!transcription}
                   >
-                  Unduh .srt
+                  Simpan .srt
                 </Button>
               </Col>
             </Row>
