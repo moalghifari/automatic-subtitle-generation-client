@@ -1,7 +1,7 @@
 # Indonesian ASR Web Interface
 
 ## Introduction
-This project was created as a web interface of Indonesian ASR project ([moalghifari/indonesian-asr](https://github.com/moalghifari/indonesian-asr)).
+A web interface of Indonesian ASR project ([moalghifari/indonesian-asr](https://github.com/moalghifari/indonesian-asr)).
 
 ## Requirements
 - npm
