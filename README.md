@@ -1,7 +1,7 @@
 # Indonesian ASR Web Interface
 
 ## Introduction
-A web interface of Indonesian ASR project ([moalghifari/indonesian-asr](https://github.com/moalghifari/indonesian-asr)).
+A web interface of Indonesian ASR project ([moalghifari/automatic-subtitle-generation](https://github.com/moalghifari/automatic-subtitle-generation)).
 
 ## Requirements
 - npm
